@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>57c3b4db-750b-4156-adbc-0a313e52fc66</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>testwindow.py</StartupFile>
+    <SearchPath>C:\Python27;..\..\PydUI</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>ui</Name>
+    <RootNamespace>ui</RootNamespace>
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+    <IsWindowsApplication>True</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="control\Activex.py" />
+    <Compile Include="control\__init__.py" />
+    <Compile Include="core\UIManager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="control\Dialog.py" />
+    <Compile Include="control\List.py" />
+    <Compile Include="control\Base.py" />
+    <Compile Include="control\Process.py" />
+    <Compile Include="control\Tab.py" />
+    <Compile Include="core\__init__.py" />
+    <Compile Include="testwindow.py" />
+    <Compile Include="control\Editor.py" />
+    <Compile Include="control\Tree.py" />
+    <Compile Include="control\Window.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="control\" />
+    <Folder Include="core\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>
