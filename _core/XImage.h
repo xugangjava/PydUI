@@ -26,9 +26,9 @@ public:
 		bmpH=0;
 	}
 
-	XImage(bp::list bufer)
+	XImage(bp::dict kv)
 	{
-		int len=bp::len(bufer);
+		/*int len=bp::len(bufer);
 		BYTE* heap=new BYTE[len];
 		for(int i = 0; i < len; i++)
 			heap[i] = bp::extract< unsigned char >(bufer[i] );
@@ -45,9 +45,9 @@ public:
 			pStream->Release();
 		}
 		GlobalFree(hGlobal);
-
-
 		delete[] heap;
+*/
+
 
 		bmpW=m_Image.GetWidth();
 		bmpH=m_Image.GetHeight();
@@ -61,24 +61,24 @@ public:
 
 public:
 
-	bool Create(BYTE* heap, DWORD heap_len, CImage& img)
-	{
-		bool ret = false;
-		HGLOBAL hGlobal = ::GlobalAlloc(GHND, heap_len);
-		LPBYTE  lpByte  = (LPBYTE)::GlobalLock(hGlobal);
-		CopyMemory(lpByte, heap, heap_len);
-		::GlobalUnlock(hGlobal);
-		IStream* pStream = NULL;
-		if ( SUCCEEDED(::CreateStreamOnHGlobal(hGlobal, FALSE, &pStream)) )
-		{
-			img.Destroy();
-			img.Load(pStream);
-			pStream->Release();
-			ret = true;
-		}
-		GlobalFree(hGlobal);
-		return ret;
-	}
+	//bool Create(BYTE* heap, DWORD heap_len, CImage& img)
+	//{
+	//	bool ret = false;
+	//	HGLOBAL hGlobal = ::GlobalAlloc(GHND, heap_len);
+	//	LPBYTE  lpByte  = (LPBYTE)::GlobalLock(hGlobal);
+	//	CopyMemory(lpByte, heap, heap_len);
+	//	::GlobalUnlock(hGlobal);
+	//	IStream* pStream = NULL;
+	//	if ( SUCCEEDED(::CreateStreamOnHGlobal(hGlobal, FALSE, &pStream)) )
+	//	{
+	//		img.Destroy();
+	//		img.Load(pStream);
+	//		pStream->Release();
+	//		ret = true;
+	//	}
+	//	GlobalFree(hGlobal);
+	//	return ret;
+	//}
 
 	//draw  
 	void Draw();

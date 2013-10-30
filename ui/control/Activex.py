@@ -1,4 +1,4 @@
 class Activex(object):
-	"""description of class"""
+    """description of class"""
 
 

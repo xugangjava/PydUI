@@ -17,7 +17,7 @@
 #include <boost/python.hpp>
 #include <string>
 #include <objbase.h>
-
+#include "sqlite3.h"
 typedef enum
 {
 	XFONT__FIRST = 0,
